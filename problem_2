@@ -1,0 +1,21 @@
+def fib(n):
+    a,b = 0,1
+    c = []
+    while a < n:
+        c.append(a)
+        a, b = b, a + b
+    return c  
+
+print(fib(1000))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
+
+sum_fib = 0
+for i in fib(4*10**6):
+    if i % 2 == 0:
+        sum_fib += i
+print(sum_fib)  # Output: 4613732
+         
+ 
+
+
+
+    
