@@ -1,0 +1,37 @@
+def is_prime(n):
+    """Check if a number is prime."""
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def prime_factors(n):
+    """Return a list of prime factors of a number."""
+    factors = []
+    for i in range(2, n + 1):
+        if n % i == 0 and is_prime(i):
+            factors.append(i)
+    return factors
+
+#Chat GPT solution
+## Function to find the largest prime factor of a number
+# This function finds the largest prime factor of a given number n.
+# It iteratively divides n by its smallest prime factor until n becomes 1.
+def largest_prime_factor(n):
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            n //= i
+        else:
+            i += 1
+        print(f"Current factor: {i}, Remaining number: {n}")
+    return n
+
+print("Prime factors of 28:", prime_factors(28))  # Example usage
+print("Prime factors of 100:", prime_factors(13195))  # Example usage
+print("Prime factors feo de:", largest_prime_factor(600851475143))  # Example usage
+print("Largest prime factor of 13195:", largest_prime_factor(13195))  # Example usage
+
+
